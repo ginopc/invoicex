@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="JTableDb.java">
+        <attr name="class_dependency_java.io.Serializable" stringvalue="JTableDb"/>
+        <attr name="class_dependency_javax.swing.JTable" stringvalue="JTableDb"/>
+        <attr name="class_dependency_javax.swing.event.TableColumnModelListener" stringvalue="JTableDb"/>
+    </fileobject>
+    <fileobject name="tnxDbGrid2.java">
+        <attr name="class_dependency_it.tnx.dbeans.ResultSetTableModel" stringvalue="ScrollingResultSetTableModel;CachingResultSetTableModel"/>
+        <attr name="class_dependency_java.awt.event.MouseAdapter" stringvalue="HeaderListener"/>
+        <attr name="class_dependency_java.io.Serializable" stringvalue="tnxDbGrid2"/>
+        <attr name="class_dependency_java.lang.Thread" stringvalue="TRiempiGriglia"/>
+        <attr name="class_dependency_javax.swing.JTable" stringvalue="tnxDbGrid2"/>
+        <attr name="class_dependency_javax.swing.event.ListSelectionListener" stringvalue="tnxDbGrid2"/>
+        <attr name="class_dependency_javax.swing.event.TableColumnModelListener" stringvalue="tnxDbGrid2"/>
+        <attr name="class_dependency_javax.swing.event.TableModelListener" stringvalue="tnxDbGrid_eventi"/>
+        <attr name="class_dependency_javax.swing.table.AbstractTableModel" stringvalue="ResultSetTableModel"/>
+    </fileobject>
+    <fileobject name="tnxDbGrid2.java.old">
+        <attr name="org.netbeans.modules.text.IsTextFile" boolvalue="true"/>
+    </fileobject>
+</attributes>

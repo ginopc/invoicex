@@ -1,0 +1,67 @@
+#tnx properties file
+#Tue Aug 30 11:43:43 CEST 2011
+altro_da_ddt=Da DDT
+altro_da_ordine=Da Ordine
+db_nome_database=invoicex_blank
+db_pwd=5JJnptdSs6DSVjwp3tCN3w\=\=
+db_server=linux
+db_ssh=false
+db_ssh_hostname=
+db_ssh_login=
+db_ssh_password=SNlj4krh3fg\=
+db_ssh_porta_locale=
+db_ssh_porta_remota=
+db_ssl=false
+db_ssl_truststore=
+db_startdb=.\\mysql\\bin\\mysqld-nt.exe --no-defaults --standalone --console --basedir\=mysql --skip-networking --enable-named-pipe --bind-address\=localhost --skip-bdb --pid-file\=mysql_invoicex.pid --innodb_file_per_table
+db_startdbcheck=N
+db_user=root
+iva_codiceIvaDefault=
+iva_codiceIvaSpese=
+personalizzazioni_personalizzazioni=
+pref_azioniPericolose=true
+pref_controlliIva=true
+pref_font_family=Tahoma
+pref_font_size=11
+pref_generazione_movimenti=0
+pref_inclNumProForma=true
+pref_limit=
+pref_listinoConsigliatoDdt=
+pref_multiriga=true
+pref_nascondiDonazione=false
+pref_noteStandard=
+pref_numerazioneNoteCredito=true
+pref_provvigioniAutomatiche=false
+pref_provvigioniPercentualeAuto=false
+pref_raggruppa_articoli=2
+pref_ricercaPerPersona=false
+pref_richiediPassword=false
+pref_scadenzeOrdini=false
+pref_soloItaliano=true
+pref_stampaCedoliniBonifici=false
+pref_stampaCellulare=false
+pref_stampaDestDiversaSotto=false
+pref_stampaPdf=false
+pref_stampaTelefono=false
+pref_tipoStampa=null
+pref_tipoStampaDDT=null
+pref_tipoStampaFA=null
+pref_tipoStampaOrdine=null
+pref_updateListini=false
+pref_visualizzaAnnoInCorso=false
+pref_visualizzaTotali=true
+varie_campoSerie=N
+varie_finestre_grandi=no
+varie_look=JGoodies Plastic XP
+varie_messaggioStampa=
+varie_non_stampare_logo=no
+varie_non_stampare_logo_pdf=no
+varie_non_stampare_sfondo=no
+varie_non_stampare_sfondo_pdf=no
+varie_percorso_logo_stampe=
+varie_percorso_logo_stampe_pdf=
+varie_percorso_sfondo_stampe=
+varie_percorso_sfondo_stampe_pdf=
+varie_prezziCliente=N
+varie_umpred=
+wizard_eseguito=S

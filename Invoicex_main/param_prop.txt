@@ -1,0 +1,19 @@
+#tnx properties file
+#Mon Jan 16 11:38:07 CET 2012
+db_startdb=.\\mysql\\bin\\mysqld-nt.exe --no-defaults --standalone --console --basedir\=mysql --skip-networking --enable-named-pipe --bind-address\=localhost --pid-file\=mysql_invoicex.pid --innodb_file_per_table --max_allowed_packet\=64M
+db_startdbcheck=N
+pref_azioniPericolose=
+pref_limit=
+pref_multiriga=true
+pref_noteStandard=
+pref_soloItaliano=true
+pref_stampaCellulare=false
+pref_stampaDestDiversaSotto=false
+pref_stampaPdf=false
+pref_stampaTelefono=false
+pref_tipoStampa=fattura_mod2_default.jrxml
+pref_tipoStampaDDT=ddt_mod2_default.jrxml
+pref_tipoStampaFA=fattura_acc_mod2_default.jrxml
+pref_tipoStampaOrdine=ordine_default.jrxml
+pref_visualizzaTotali=
+wizard_eseguito=S

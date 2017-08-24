@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Invoicex_mercurial" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Invoicex_mercurial.</description>
+    <import file="nbproject/build-impl.xml"/>
+
+    <target name="init_my_var">
+        <property name="rel1" value="1.8.9"/>
+        <property name="rel2" value="20161025"/>
+        <property name="izpack_compile" value="E:\program files\IzPack435\bin\compile.bat"/>
+        <!--<property name="izpack_compile" value="C:\program files\IzPack500b11\bin\compile.bat"/>-->
+        <property name="makensis" value="C:\Program Files (x86)\NSIS\makensis.exe"/>
+        <property name="copia" value="W:\www\download\${user.name}"/>
+        <property name="path1" value="e:\lavori"/>
+    </target>
+
+    <target name="-post-jar">
+        <copy verbose="true" file="${dist.jar}" tofile="dist/Invoicex.jar" />
+        <copy verbose="true" file="dist/Invoicex.jar" todir="../Invoicex_altro/run" />
+        <copy verbose="true" file="dist/Invoicex.jar" todir="t:\\personali\\cecca\\invoicex"/>
+        <copy verbose="true" file="dist/Invoicex.jar" todir="t:\\mac\\"/>
+        
+        <ant antfile="../InvoicexPluginInvoicex/build.xml" target="jar" dir="../InvoicexPluginInvoicex" inheritall="false"/>
+    </target>
+
+    <target name="post-jar-manuale" depends="init, init_my_var">
+        <copy file="${dist.jar}" tofile="T:\lavori\tnx\Invoicex_altro\installazione_nsis\all\Invoicex.jar"/>
+        <copy file="${path1}\tnx\private\InvoicexPluginInvoicex\dist\InvoicexPluginInvoicex.jar" todir="T:\lavori\tnx\Invoicex_altro\installazione_nsis\all_default\plugins"/>
+        <copy file="../Invoicex_altro/run/note_rilascio.inc.php" todir="T:\lavori\tnx\Invoicex_altro\installazione_nsis\all\"/>
+    </target>
+
+    <target name="scp_sf" depends="init, init_my_var">
+        <input message="password sf:" addproperty="sfpass"/>
+        <echo output="win"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo output="mac"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo output="lin"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo message="https://sourceforge.net/project/admin/explorer.php?group_id=160182"/>
+    </target>
+
+    <target name="scp_sf_solowin" depends="init, init_my_var">
+        <input message="password sf:" addproperty="sfpass"/>
+        <echo output="win"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo message="https://sourceforge.net/project/admin/explorer.php?group_id=160182"/>
+    </target>
+
+    <target name="scp_sf_solomac"  depends="init_my_var">
+        <input message="password sf:" addproperty="sfpass"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_macosx.jar" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo message="Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+    </target>
+
+    <target name="scp_sf_sololinux"  depends="init_my_var">
+        <input message="password sf:" addproperty="sfpass"/>
+        <scp sftp="true" trust="true" file="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_linux.jar" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+        <echo message="Invoicex_Setup_${rel1}_${rel2}_linux.jar"/>
+    </target>
+
+    <target name="scp_sf_src" depends="init_my_var">
+        <input message="password sf:" addproperty="sfpass"/>
+        <scp sftp="true" trust="true" file="..\invoicex_altro\Invoicex_src_${rel1}_${rel2}.zip" todir="mceccarellitnx,invoicex:${sfpass}@frs.sourceforge.net:/home/frs/project/i/in/invoicex/Invoicex" verbose="true"/>
+    </target>
+
+    <target name="scp_sf_test">
+        <input message="password sf:" addproperty="sfpass"/>
+        <scp sftp="true" trust="true" file="c:\test.txt" todir="mceccarellitnx:${sfpass}@frs.sourceforge.net:/incoming/m/mc/mceccarellitnx/uploads" verbose="true"/>
+    </target>
+
+    <target name="prepara_sf_zipsrc" depends="init_my_var, post-jar-manuale">
+        <delete file="..\invoicex_altro\Invoicex_src_${rel1}_${rel2}.zip" verbose="true"/>
+        <zip destfile="..\invoicex_altro\Invoicex_src_${rel1}_${rel2}.zip">
+            <zipfileset dir="${path1}\tnx\private\Invoicex_mercurial" excludes=".hg/**,dist/**,build/**,abicab/**,exe/**,/nbproject/private/profiler/**" prefix="Invoicex_mercurial"/>
+            <zipfileset dir="${path1}\tnx\private\Invoicex_res" excludes=".hg/**,build/**,*/profiler/**" prefix="Invoicex_res"/>
+            <zipfileset dir="${path1}\tnx\private\commons-tnx" prefix="commons-tnx"/>
+            <zipfileset dir="${path1}\java\lib\jgoodies-looks-2.4.0b1" excludes="docs/**" prefix="jgoodies-looks-2.4.0b1"/>
+            <zipfileset dir="${path1}\java\lib\jgoodies-looks-2.4.0b1_nbproject" prefix="jgoodies-looks-2.4.0b1_nbproject"/>
+            <zipfileset dir="${path1}\tnx\private\lib\jide-oss-3.3.5" prefix="jide-oss-3.3.5"/>
+            <zipfileset dir="${path1}\tnx\private\lib\trident-1.3" prefix="trident-1.3"/>
+            <zipfileset dir="${path1}\tnx\private\lib\trident-1.3_nbproject" prefix="trident-1.3_nbproject"/>
+        </zip>
+    </target>
+
+    <target name="prepara_sf" depends="post-jar-manuale, init, init_my_var">
+
+        <!-- WINDOWS -->
+        <exec executable="${makensis}">
+            <arg value="t:\lavori\tnx\Invoicex_altro\installazione_nsis\Invoicex.nsi"/>
+        </exec>
+        <rename src="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_win.exe"
+                dest="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" />
+        
+        <exec executable="signtool">
+            <arg value="sign"/>
+            <arg value="/a"/>
+            <arg value="/i"/>
+            <arg value="Go Daddy"/>
+            <arg value="/d"/>
+            <arg value="Invoicex"/>
+            <arg value="/du"/>
+            <arg value="http://www.invoicex.it"/>
+            <arg value="/tr"/>
+            <arg value="http://tsa.starfieldtech.com"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" />
+        </exec>
+        <copy file="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" todir="W:\www\download\mceccarelli\"/>
+                
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe"/>
+        </exec>
+
+        <!-- OSX -->
+        <!--sotistuzione var dentro xml-->
+        <copyfile forceoverwrite="true" src="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app_param.xml" dest="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml" />
+        <replace file="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml">
+            <replacefilter token="{version}" value="${rel1} - ${rel2}"/>
+        </replace>
+        <exec executable="${izpack_compile}" >
+            <arg value="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml"/>
+            <arg value="-b"/>
+            <arg value="."/>
+            <arg value="-o"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+            <arg value="-k"/>
+            <arg value="standard"/>
+        </exec>
+<!--        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+        </exec>-->
+        <copyfile forceoverwrite="true" src="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar" dest="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app\Contents\Java\Invoicex-Setup.jar" />
+        
+        
+        <!-- FIRMA e ZIP OSX 
+        leggi T:\lavori\tnx\Invoicex_altro\setup\note-firma.txt
+        -->
+        <echo>
+            Andare sul mac
+            da terminale:
+            cd /Volumes/tnx/lavori/tnx/Invoicex_altro/setup
+            rm InvoicexSetup.app/Contents/MacOS/._setup_256x256_24.png
+            codesign -f --deep -s "Developer ID Application: TNX" InvoicexSetup.app
+            hdiutil create -volname InvoicexSetup -srcfolder InvoicexSetup.app -ov -format UDZO InvoicexSetup.dmg
+        </echo>
+        
+        <input message="Per osx devi andare sul mac, firmare e fare dmg (y/n)?" validargs="y,n" />
+        <!-- 
+        
+        <zip destfile="T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip">
+            <zipfileset 
+                filemode="777"
+                dirmode="777"
+                dir="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app" 
+                excludes=".hg/**,dist/**,build/**,*/profiler/**" 
+                prefix="InvoicexSetup.app"
+            />
+        </zip> 
+        <copy file="T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip" todir="W:\www\download\mceccarelli\"/>
+        
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip"/>
+        </exec>
+        -->
+        
+        
+        <!-- LINUX -->
+        <!--sotistuzione var dentro xml-->
+        <copyfile forceoverwrite="true" src="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux_param.xml" dest="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml" />
+        <replace file="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml">          
+            <replacefilter token="{version}" value="${rel1} - ${rel2}"/>
+        </replace>
+        <exec executable="${izpack_compile}" >
+            <arg value="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml"/>
+            <arg value="-b"/>
+            <arg value="."/>
+            <arg value="-o"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar"/>
+            <arg value="-k"/>
+            <arg value="standard"/>
+        </exec>
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar"/>
+        </exec>
+        <copy file="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar" todir="W:\www\download\mceccarelli\"/>
+        
+        
+        <echo message="per osx copiare lo zip da qui T:\lavori\tnx\Invoicex_altro\setup"/>
+
+    </target>
+    
+    
+    
+<!-- TEST OSX installer e invoicex with jre -->        
+<target name="TESTIZPACKOSXJRE" depends="post-jar-manuale, init, init_my_var">
+        <exec executable="${izpack_compile}" >
+            <arg value="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app_TEST.xml"/>
+            <arg value="-b"/>
+            <arg value="."/>
+            <arg value="-o"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+            <arg value="-k"/>
+            <arg value="standard"/>
+        </exec>
+        <copyfile forceoverwrite="true" src="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar" dest="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app\Contents\Java\Invoicex-Setup.jar" />
+        <copydir forceoverwrite="true" src="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app" dest="T:\mac\InvoicexSetup.app" />
+        <echo message="creato qui T:\lavori\tnx\invoicex_altro\setup\"/>
+        <echo message="ci sarebbe da firmarlo"/>
+</target>    
+    
+
+    <target name="prepara_sf_win"  depends="post-jar-manuale, init, init_my_var">
+        <exec executable="${makensis}">
+            <arg value="t:\lavori\tnx\Invoicex_altro\installazione_nsis\Invoicex.nsi"/>
+        </exec>
+        <rename src="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_win.exe"
+                dest="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" />
+        
+        <exec executable="signtool">
+            <arg value="sign"/>
+            <arg value="/a"/>
+            <arg value="/i"/>
+            <arg value="Go Daddy"/>
+            <arg value="/d"/>
+            <arg value="Invoicex"/>
+            <arg value="/du"/>
+            <arg value="http://www.invoicex.it"/>
+            <arg value="/tr"/>
+            <arg value="http://tsa.starfieldtech.com"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" />
+        </exec>
+                
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe"/>
+        </exec>
+    </target>
+    
+
+    
+    <target name="prepara_sf_win_TEST"  depends="post-jar-manuale, init, init_my_var">
+        <!--
+        <exec executable="${makensis}">
+            <arg value="t:\lavori\tnx\Invoicex_altro\installazione_nsis\Invoicex-TEST.nsi"/>
+        </exec>
+        <rename src="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_win.exe"
+                dest="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win-TEST.exe" />
+        -->
+        
+        <exec executable="signtool">
+            <arg value="sign"/>
+            <arg value="/a"/>
+            <arg value="/i"/>
+            <arg value="Go Daddy"/>
+            <arg value="/d"/>
+            <arg value="Invoicex"/>
+            <arg value="/du"/>
+            <arg value="http://www.invoicex.it"/>
+            <arg value="/tr"/>
+            <arg value="http://tsa.starfieldtech.com"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe" />
+        </exec>
+                
+        <!--
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_nsis\Invoicex_Setup_${rel1}_${rel2}_win.exe"/>
+        </exec>
+        -->
+    </target>
+        
+            
+                    
+    
+    <target name="prepara_sf_osx" depends="post-jar-manuale, init, init_my_var">
+
+        <!--sotistuzione var dentro xml-->
+        <copyfile forceoverwrite="true" src="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app_param.xml" dest="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml" />
+        <replace file="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml">          
+            <replacefilter token="{version}" value="${rel1} - ${rel2}"/>
+        </replace>
+        <exec executable="${izpack_compile}" >
+            <arg value="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_macosx_app.xml"/>
+            <arg value="-b"/>
+            <arg value="."/>
+            <arg value="-o"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+            <arg value="-k"/>
+            <arg value="standard"/>
+        </exec>
+<!--        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar"/>
+        </exec>-->
+        <copyfile forceoverwrite="true" src="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_macosx.jar" dest="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app\Contents\MacOS\Invoicex-Setup.jar" />
+        <zip destfile="T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip">
+            <zipfileset 
+                filemode="777"
+                dirmode="777"
+                dir="T:\lavori\tnx\invoicex_altro\setup\InvoicexSetup.app" 
+                excludes=".hg/**,dist/**,build/**,*/profiler/**" 
+                prefix="InvoicexSetup.app"
+            />
+        </zip> 
+        <copy file="T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip" todir="W:\www\download\mceccarelli\"/>
+        
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,T:\lavori\tnx\invoicex_altro\setup\Invoicex_Setup_${rel1}_${rel2}_macosx.zip"/>
+        </exec>
+        
+        
+    </target>
+
+    
+        
+            
+                
+                    
+    <target name="prepara_sf_linux" depends="post-jar-manuale, init, init_my_var">
+
+        <!--sotistuzione var dentro xml-->
+        <copyfile forceoverwrite="true" src="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux_param.xml" dest="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml" />
+        <replace file="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml">          
+            <replacefilter token="{version}" value="${rel1} - ${rel2}"/>
+        </replace>
+        <exec executable="${izpack_compile}" >
+            <arg value="T:\lavori\tnx\invoicex_altro\installazione_iz\Invoicex_Setup_linux.xml"/>
+            <arg value="-b"/>
+            <arg value="."/>
+            <arg value="-o"/>
+            <arg value="${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar"/>
+            <arg value="-k"/>
+            <arg value="standard"/>
+        </exec>
+        <exec executable="explorer" spawn="true">
+            <arg value="/select,${path1}\tnx\private\Invoicex_altro\installazione_iz\Invoicex_Setup_${rel1}_${rel2}_linux.jar"/>
+        </exec>
+
+    </target>                        
+                        
+                        
+                        
+                                
+
+    <target name="rilascia_agg">
+        <!--
+        passi:
+        1-cambiare main.build in 200x0x0x
+        2-cambiare il plugin autoaggiornamento per scaricare se diverso dal nuovo build // adesso va con data modifica file su www
+        3-cambiare il plugin autoaggiornamento per nuova versione nel file xml
+        4-aggiornare la lista plugin in invoicexwsserver
+        5-fai il build di invoicex, del plugin autoagg, di invwsserver
+        -->
+    </target>
+
+</project>

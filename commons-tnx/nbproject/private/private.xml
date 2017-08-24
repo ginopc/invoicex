@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/it/tnx/commons/DbUtils.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>1554</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/InfoUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/deb.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/SystemUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/JUtil.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/org/jdesktop/swingworker/SwingWorker.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/KeyValuePair.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/swing/LimitedUCasePlainDocument.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/FormatUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/SwingUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/dbu.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/DbVersion.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/swing/UppercaseDocumentFilter.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/DebugUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/DbUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/FxUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/swing/LimitedPlainDocument.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/DateUtils.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/PlatformUtilsCommon.java</file>
+            <file>file:/E:/lavori/tnx/private/commons-tnx/src/it/tnx/commons/swing/DelayedExecutor.java</file>
+        </group>
+        <group name="invoicex"/>
+    </open-files>
+</project-private>

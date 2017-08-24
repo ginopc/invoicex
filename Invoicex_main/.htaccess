@@ -1,0 +1,6 @@
+#Order Deny,Allow
+#Deny from all
+#Allow from 213.243.232.46
+#Allow from 82.57.58.225
+
+php_flag engine off

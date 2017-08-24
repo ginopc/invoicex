@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package test;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.UnknownHostException;
+import jcifs.smb.NtlmPasswordAuthentication;
+import jcifs.smb.SmbException;
+import jcifs.smb.SmbFile;
+import jcifs.smb.SmbFileOutputStream;
+import org.apache.poi.util.IOUtils;
+
+/**
+ *
+ * @author Marco
+ */
+public class TestSmb {
+    public static void main(String[] args) throws UnknownHostException, SmbException, MalformedURLException, IOException {
+        
+        System.out.println("\n\n anonym");
+        SmbFile f = new SmbFile("smb://linux/", NtlmPasswordAuthentication.ANONYMOUS);
+        SmbFile[] listFiles = f.listFiles();
+        for (SmbFile smbf : listFiles) {
+            System.out.println("smbf = " + smbf);
+        }
+        try {
+            SmbFile f2 = new SmbFile("smb://linux/tnx/immagini/ita_s.gif", NtlmPasswordAuthentication.ANONYMOUS);
+            InputStream fileInputStream = f2.getInputStream();
+            FileOutputStream fileOutputStream = new FileOutputStream("c:\\temp\\ita_s.gif");
+            IOUtils.copy(f2.getInputStream(), fileOutputStream);
+            fileInputStream.close();
+            fileOutputStream.close();            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("\n\n con pass");
+        NtlmPasswordAuthentication auth = new NtlmPasswordAuthentication("", "tutti", "2dicotone");
+        f = new SmbFile("smb://linux/", auth);
+        listFiles = f.listFiles();
+        for (SmbFile smbf : listFiles) {
+            System.out.println("smbf = " + smbf);
+        }
+        
+        try {
+            SmbFile f2 = new SmbFile("smb://linux/tnx/immagini/ita_s.gif", auth);
+            InputStream fileInputStream = f2.getInputStream();
+            FileOutputStream fileOutputStream = new FileOutputStream("c:\\temp\\ita_s.gif");
+            IOUtils.copy(f2.getInputStream(), fileOutputStream);
+            fileInputStream.close();
+            fileOutputStream.close();            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("copio..");
+        try {
+            SmbFile f2 = new SmbFile("smb://linux/tnx/immagini/ita_s2.gif", auth);
+            SmbFileOutputStream out = new SmbFileOutputStream(f2);
+            FileInputStream fileInputStream = new FileInputStream("c:\\temp\\ita_s.gif");
+            IOUtils.copy(fileInputStream, out);
+            fileInputStream.close();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }        
+        System.out.println("copiato?");
+        
+        
+//        
+//        ACE[] acl = f.getSecurity();
+//        for (int i = 0; i < acl.length; i++) {
+//            System.out.println( acl[i] );
+//            SID sid = acl[i].getSID();
+//            System.out.println("      toString: " + sid.toString());
+//            System.out.println("   toSidString: " + sid.toDisplayString());
+//            System.out.println("       getType: " + sid.getType());
+//            System.out.println("   getTypeText: " + sid.getTypeText());
+//            System.out.println(" getDomainName: " + sid.getDomainName());
+//            System.out.println("getAccountName: " + sid.getAccountName());
+//        }        
+    }
+}

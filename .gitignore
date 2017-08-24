@@ -1,2 +1,5 @@
 # Libraries and binaries
 *.jar
+
+# Backup files
+*.zip 

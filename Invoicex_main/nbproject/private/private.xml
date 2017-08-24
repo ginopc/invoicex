@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="5">
+        <file>
+            <url>src/gestioneFatture/frmTestOrdine.java</url>
+            <bookmark id="3">
+                <name/>
+                <line>243</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/gestioneFatture/frmTestFatt.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>4684</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/gestioneFatture/frmElenOrdini.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>2470</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/tnxbeans/tnxDbPanel.java</url>
+            <bookmark id="4">
+                <name/>
+                <line>3161</line>
+                <key/>
+            </bookmark>
+            <bookmark id="5">
+                <name/>
+                <line>3218</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/main.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/reports/JRDSBase.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/JDialogAccesso.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmNuovRigaDescrizioneMultiRigaNew.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/logic/documenti/IvaDed.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/JDialogBugMassimaleRivalsa.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/build.xml</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/importExportAscii/ReadyTec.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmTestOrdine.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/MyEventQueue.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/iniFileProp.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmElenFatt.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/DbChanges2.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/reports/JRDSInvoiceAcquisto.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/Attivazione.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmTestDocu.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/lib/DJNativeSwing-SWT-1-0-2/src/DJNativeSwing/chrriis/common/Utils.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/log4j.properties</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/JInternalFrameClientiFornitori.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/Main.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/DbVersionChanges.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/MysqlLogger.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/MainBatch.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/JInternalFrameScadenzario.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/tnxbeans/tnxDbPanel.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/logic/documenti/DettaglioIva.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/reports/JRDSDdt.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/reports/JRDSInvoice.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/MenuPanel.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/tnxbeans/tnxDbGrid.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmElenDDT.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/MainHttpServer.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/utils/JPanelCellKeyValue.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/logic/documenti/ContoIvaDedTMP.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/CheckThread.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmArtiConListino.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/InvoicexUtil.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/logic/documenti/Documento.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmElenFattAcquisto.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/JFrameWizardDb.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/RiscattaAcquisto.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/CoordinateBancarie.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/reports/JRDSOrdine.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/frmTestFatt.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/accessoUtenti/Utente.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/sync/Sync.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/dbOrdine.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/dbDocumento.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/MenuFrame.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/JDialogImpostazioni.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/it/tnx/invoicex/gui/JDialogAbout.java</file>
+            <file>file:/E:/lavori/tnx/private/Invoicex_mercurial/src/gestioneFatture/logic/documenti/Documento2.java</file>
+        </group>
+        <group name="invoicex"/>
+    </open-files>
+</project-private>
