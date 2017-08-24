@@ -1,7 +1,7 @@
 # InvoiceX
 
 Invoicing application for small and medium business unity.
-(fork from Invoicex by Marco Ceccarelli)
+(forked from [Invoicex](http://http://www.invoicex.it))
 
 ## Contacts
 
