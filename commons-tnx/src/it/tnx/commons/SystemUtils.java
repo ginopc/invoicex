@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,21 +32,21 @@ public class SystemUtils {
     private static final String PERSONAL_FOLDER_CMD = REGQUERY_UTIL + "\"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders\" /v Personal";
 
     public static void main(String[] args) throws Exception {
-//        List<String> processes = listRunningProcesses();
-//        String result = "";
-//        String resultok = "";
-//        Iterator<String> it = processes.iterator();
-//        int i = 0;
-//        String pid = "";
-//        while (it.hasNext()) {
-//            result = it.next();
-//            if (result.startsWith("mysqld-nt.exe")) {
-//                resultok += result + "\n";
-//                pid = StringUtils.split(resultok, "|")[2];
-//            }
-//        }
-//        System.out.println(resultok);
-//        System.out.println(pid);
+        List<String> processes = listRunningProcesses();
+        String result = "";
+        String resultok = "";
+        Iterator<String> it = processes.iterator();
+        int i = 0;
+        String pid = "";
+        while (it.hasNext()) {
+            result = it.next();
+            if (result.startsWith("mysqld-nt.exe")) {
+                resultok += result + "\n";
+                pid = StringUtils.split(resultok, "|")[2];
+            }
+        }
+        System.out.println(resultok);
+        System.out.println(pid);
 
 //        killProcess(pid);
 //        System.out.println(regQuery("HKEY_CLASSES_ROOT\\Applications\\PSPad.exe\\shell\\open\\command"));

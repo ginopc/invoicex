@@ -35,7 +35,8 @@ import org.apache.commons.httpclient.auth.CredentialsProvider;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.HeadMethod;
 import org.apache.commons.httpclient.protocol.Protocol;
-import org.apache.log4j.LogManager;
+// import org.apache.log4j.LogManager;
+import java.util.logging.Logger;
 
 /**
  *
@@ -51,10 +52,10 @@ public class HttpUtils {
         if (httpclient != null) return httpclient;
         
         try {
-            LogManager.getLogger("org.apache.commons.httpclient.").setLevel(org.apache.log4j.Level.OFF);
-            LogManager.getLogger("org.apache.commons.httpclient").setLevel(org.apache.log4j.Level.OFF);
-            LogManager.getLogger("httpclient.wire.content").setLevel(org.apache.log4j.Level.OFF);
-            LogManager.getLogger("httpclient.wire.header").setLevel(org.apache.log4j.Level.OFF);
+            Logger.getLogger("org.apache.commons.httpclient.").setLevel(Level.OFF);
+            Logger.getLogger("org.apache.commons.httpclient.").setLevel(Level.OFF);
+            Logger.getLogger("httpclient.wire.content").setLevel(Level.OFF);
+            Logger.getLogger("httpclient.wire.header").setLevel(Level.OFF);
         } catch (Exception e) {
             e.printStackTrace();
         }
