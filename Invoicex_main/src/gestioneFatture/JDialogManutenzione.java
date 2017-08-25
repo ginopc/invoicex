@@ -1102,7 +1102,8 @@ public class JDialogManutenzione extends javax.swing.JDialog {
                 query.add(q);
             }
 
-            String sql = StringUtils.join(query, " UNION ");
+            // String sql = StringUtils.join(query, " UNION ");
+            String sql = String.join(" UNION ", query);
             try {
 
                 ArrayList<Map> lista = dbu.getListMap(Db.getConn(), sql);

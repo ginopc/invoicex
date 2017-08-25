@@ -50,7 +50,6 @@ import javax.swing.UIManager;
 import net.sf.jasperreports.engine.JasperManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.design.JasperDesign;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.time.DateUtils;
 

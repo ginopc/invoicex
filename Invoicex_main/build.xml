@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Invoicex_mercurial" default="default" basedir=".">
+<project name="InvoicexMain" default="default" basedir=".">
     <description>Builds, tests, and runs the project Invoicex_mercurial.</description>
     <import file="nbproject/build-impl.xml"/>
 

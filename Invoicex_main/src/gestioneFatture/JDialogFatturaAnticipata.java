@@ -304,9 +304,9 @@ public class JDialogFatturaAnticipata extends JDialog {
 
     private void apricontiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apricontiActionPerformed
         if (conto.getText().trim().length() == 0) {
-            conto_hints.showHints2();
+            conto_hints.showHints();
             conto_hints.updateHints(null);
-            conto_hints.showHints2();
+            conto_hints.showHints();
         } else {
             conto_hints.showHints();
         }

@@ -9,13 +9,10 @@ import it.tnx.commons.DbUtils;
 import it.tnx.commons.cu;
 import java.awt.Color;
 import java.awt.Component;
-import javax.swing.BorderFactory;
 import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
-import javax.swing.plaf.ComponentUI;
 import javax.swing.table.TableCellRenderer;
-import sun.swing.DefaultLookup;
 
 /**
  *

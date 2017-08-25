@@ -3061,9 +3061,9 @@ private void prezzi_ivati_virtualActionPerformed(java.awt.event.ActionEvent evt)
     private void apriclientiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apriclientiActionPerformed
         //    alRicercaCliente.showHints();
         if (texCliente.getText().trim().length() == 0) {
-            al_clifor.showHints2();
+            al_clifor.showHints();
             al_clifor.updateHints(null);
-            al_clifor.showHints2();
+            al_clifor.showHints();
         } else {
             al_clifor.showHints();
         }

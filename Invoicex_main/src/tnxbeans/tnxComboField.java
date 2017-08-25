@@ -78,7 +78,7 @@ public class tnxComboField extends javax.swing.JComboBox implements Serializable
 //            timFindC.setPriority(java.lang.Thread.MIN_PRIORITY);
 //            timFindC.start();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
 
     }

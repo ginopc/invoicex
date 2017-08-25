@@ -31,7 +31,6 @@ import it.tnx.commons.CastUtils;
 import it.tnx.commons.DbUtils;
 import it.tnx.commons.FileUtils;
 import it.tnx.commons.ImgUtils;
-import it.tnx.commons.ReflectUtils;
 import it.tnx.commons.SwingUtils;
 import it.tnx.commons.combo.WideComboBox;
 import it.tnx.commons.cu;
@@ -59,7 +58,6 @@ import java.sql.Statement;
 import java.sql.Types;
 
 import java.util.Arrays;
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Map;
 import javax.imageio.ImageIO;
@@ -97,7 +95,7 @@ import uk.co.jaimon.test.SimpleImageInfo;
  *
  * @author mceccarelli
  */
-public class JDialogImpostazioni extends javax.swing.JDialog {
+public class JDialogImpostazioniOld extends javax.swing.JDialog {
 
     private static final int grandezzaTooltipImage = 150;
     String oldHost;
@@ -123,7 +121,7 @@ public class JDialogImpostazioni extends javax.swing.JDialog {
     /**
      * Creates new form JDialogImpostazioni
      */
-    public JDialogImpostazioni(java.awt.Frame parent, boolean modal) {
+    public JDialogImpostazioniOld(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         init(parent, modal, false);
         post_init();
@@ -141,7 +139,7 @@ public class JDialogImpostazioni extends javax.swing.JDialog {
 
     
     
-    public JDialogImpostazioni(java.awt.Frame parent, boolean modal, boolean vaisudb) {
+    public JDialogImpostazioniOld(java.awt.Frame parent, boolean modal, boolean vaisudb) {
         super(parent, modal);
         this.vaisudb = vaisudb;
         init(parent, modal, vaisudb);
@@ -825,7 +823,7 @@ public class JDialogImpostazioni extends javax.swing.JDialog {
                 griglia_soglie.dbOpen(Db.getConn(true), sqlSoglie, Db.INSTANCE);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
 
         griglia_soglie.setEditable(cheProvvigioniAuto.isSelected());
@@ -5256,7 +5254,7 @@ public class JDialogImpostazioni extends javax.swing.JDialog {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JDialogImpostazioni(new javax.swing.JFrame(), true).setVisible(true);
+                new JDialogImpostazioniOld(new javax.swing.JFrame(), true).setVisible(true);
             }
         });
     }
@@ -5692,7 +5690,7 @@ public class JDialogImpostazioni extends javax.swing.JDialog {
 
         //nuovo tipo di stampa
         if (prefTipoStampa.endsWith(".jrxml")) {
-            final JDialogImpostazioni padre = this;
+            final JDialogImpostazioniOld padre = this;
             SwingWorker work = new SwingWorker() {
                 public Object construct() {
                     padre.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));

@@ -4814,13 +4814,13 @@ public class InvoicexUtil {
                                 } else {
                                     setListData((Vector) get);
                                 }
-                                showHints2();
+                                showHints();
                             }
                         } catch (CancellationException cex) {
                         } catch (Exception ex) {
                             System.err.println("set listdata ex " + ex.getMessage());
                             setListData(new String[]{ex.getMessage()});
-                            showHints2();
+                            showHints();
                         }
                     }
                 };
